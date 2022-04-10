@@ -62,7 +62,7 @@ function LoginForm({ handleUser }) {
       {
         errors.map(error => <p key={error} className='form-error'>{error}</p>)
       }
-      <p>Register an<Link to='/signup'>account</Link>,<br/> if you do not already have one</p>
+      <p>Register an <Link to='/signup'>account</Link>,<br/> if you do not already have one.</p>
     </div>
   )
 }
