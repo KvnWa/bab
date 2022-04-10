@@ -1,9 +1,8 @@
 import React from 'react'
 
-function Member() {
-  return (
-    <div>Member</div>
-  )
+function Member({ member }) {
+  const {username} = member
+  return <p>{username}</p>
 }
 
 export default Member
