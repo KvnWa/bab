@@ -1,6 +1,10 @@
 import React, { useEffect, useReducer } from 'react'
 import { useParams, Routes, Route } from 'react-router-dom'
-
+import ChatroomHeader from './ChatroomHeader'
+import Messages from './Messages'
+import Members from './Members'
+import Messenger from './Messenger'
+import ChatroomWithdrawal from './ChatroomWithdrawal'
 import Cable from 'actioncable'
 
 function reducer(state, action) {
