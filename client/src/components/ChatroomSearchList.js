@@ -1,8 +1,10 @@
 import React from 'react'
 
-function ChatroomSearchList() {
+function ChatroomSearchList({ children }) {
   return (
-    <div>ChatroomSearchList</div>
+    <div className='chatroom-search-list-grid'>
+      {children}
+    </div>
   )
 }
 
