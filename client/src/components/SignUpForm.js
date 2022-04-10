@@ -1,13 +1,23 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import logo from '../images/babblelogo.png'
-import { signUpFormDefaultValues, profileImages } from './helpers/formhelpers.js'
+import { profileImages } from './helpers/formhelpers.js'
 
 function SignUpForm({ handleUser }) {
+
+  const signUpFormDefaultValues = {
+    username: '',
+    password: '',
+    password_confirmation: '',
+    image_url: ''
+  }
+  
   const [formData, setFormData] = useState(signUpFormDefaultValues)
   const [errors, setErrors] = useState([])
 
   const navigate = useNavigate()
+
+  
 
   function handleFormChange(e) {
     const { name, value } = e.target
@@ -76,7 +86,7 @@ function SignUpForm({ handleUser }) {
               />
             </label>
           </div>
-          <div className='sign-up-form-container-2'>
+          {/* <div className='sign-up-form-container-2'>
             <br />
             <label>Choose Profile Image:
               <br />
@@ -91,7 +101,7 @@ function SignUpForm({ handleUser }) {
               <br />
               <img className='img-2' src={formData.image_url ||  logo} alt='default'/>
             </label>
-          </div>
+          </div> */}
         </div>
         <input className='bttn-1 submit-button' type='submit' value='Register'/>
       </form>

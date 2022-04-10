@@ -31,6 +31,7 @@ function Header({ handleUser, user }) {
     <>
       <header className='main-header'>
         <nav className='main-header-nav'>
+        <div className='header-left'>
           {
             windowWidth > 740 ? (
               <NavLink 
@@ -60,42 +61,16 @@ function Header({ handleUser, user }) {
               </>
             ) : ''
           }
+          </div>
           <div>
            <Link className='heading' to='/'>
           <img className='img-3' src={logo} alt='babble' /> 
         </Link>
         </div>
           <div onClick={handleisComponentVisible} ref={ref}>
-            
-            <div>
-              <img className='img-5 pointer' src={user.image_url ? user.image_url : logo} alt='profile'/>
-              <span className={isComponentVisible ? 'rotate' : ''}>◁</span>
+            <div className="header-right">
+              <button onClick={handleLogout} className="nav-button2">Logout</button>
             </div>
-            <nav className={isComponentVisible ? 'dropdown-menu-active' : 'hidden'}>
-              { windowWidth <= 740 ? (
-                <Link 
-                  className='dropdown-menu-nav-button' 
-                  to='/chatrooms'
-                >
-                Memberships
-                </Link>
-                ) : ''
-              }
-              {
-                windowWidth <= 1000 ? (
-                  <>
-                    <Link 
-                      className='dropdown-menu-nav-button' 
-                      to='/chatrooms/search'
-                    >
-                    Channels
-                    </Link>
-                  </>
-                ) : ''
-              }
-              <Link className='dropdown-menu-nav-button' to='/profile'>Profile</Link>
-              <button className='dropdown-menu-nav-button' onClick={handleLogout}>Logout</button>
-            </nav>
           </div>
         </nav>
       </header>

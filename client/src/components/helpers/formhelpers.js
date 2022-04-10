@@ -1,15 +1,3 @@
-export const defaultLoginFormData = {
-  username: '',
-  password: ''
-}
-
-export const signUpFormDefaultValues = {
-  username: '',
-  password: '',
-  password_confirmation: '',
-  image_url: ''
-}
-
 export const profileImages = [
   {
     name: '',

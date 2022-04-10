@@ -8,7 +8,6 @@ function Login({ handleUser }) {
   return (
     <>
       <img className='img-1' src={logo} alt='babble'/>
-      <h2>Welcome to Babble!</h2>
       <Routes>
         <Route path='/' element={<LoginForm handleUser={handleUser} />} />
         <Route path='/signup' element={<SignUpForm handleUser={handleUser} />} />

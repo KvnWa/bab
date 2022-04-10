@@ -57,7 +57,7 @@ function ChatroomSearch({ handleChatroomMembership }) {
 
   return (
     <div className='chatroom-search'>
-      <ChatroomSearchBar search={search} handleSearch={handleSearch} searchBy={searchBy} handleSearchBy={handleSearchBy}/>
+      
       <ChatroomSearchList>
         {
           chatroomSearchResults().map(chatroom => <ChatroomSearchListItem key={chatroom.id} chatroom={chatroom} selectedChatroom={selectedChatroom} handleSelectedChatroom={handleSelectedChatroom}/>)
@@ -68,6 +68,7 @@ function ChatroomSearch({ handleChatroomMembership }) {
           errors.map(error => <p key={error}>{error}</p>)
         }
       </div>
+      <ChatroomSearchBar search={search} handleSearch={handleSearch} searchBy={searchBy} handleSearchBy={handleSearchBy}/>
       <button className='search-submit-button' onClick={handleChatroomJoin}>Join Channel</button>
     </div> 
   )

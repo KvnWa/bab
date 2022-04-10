@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-
 import Login from './Login'
 import Header from './Header'
 import Chatroom from "./Chatroom";
@@ -11,7 +10,7 @@ import UserProfile from "./Profile";
 
 function App() {
   const [user, setUser] = useState(null)
-  const [authenticated, setauthenticated] = useState(false)
+  const [authenticated, setAuthenticated] = useState(false)
 
   useEffect(() => {
     fetch("/api/me")
@@ -19,10 +18,10 @@ function App() {
         if (r.ok) {
           r.json().then((userData) => { 
             setUser(() => userData)
-            setauthenticated(authenticated => !authenticated) 
+            setAuthenticated(authenticated => !authenticated) 
           })
         } else {
-          setauthenticated(authenticated => !authenticated)
+          setAuthenticated(authenticated => !authenticated)
         }
       })
   }, []);

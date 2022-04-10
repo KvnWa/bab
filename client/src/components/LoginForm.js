@@ -1,11 +1,16 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { defaultLoginFormData } from './helpers/formhelpers.js'
+import React, { useState } from 'react';
+import { Link, } from 'react-router-dom';
 
 function LoginForm({ handleUser }) {
+  const defaultLoginFormData = {
+    username: '',
+    password: ''
+  }
+
   const [formData, setFormData] = useState(defaultLoginFormData)
   const [errors, setErrors] = useState([])
 
+  
 
   function handleFormChange(e) {
     const { name, value } = e.target
@@ -58,7 +63,7 @@ function LoginForm({ handleUser }) {
             onChange={handleFormChange}
           />
         </label>
-        <input className='bttn-1 submit-button' type='submit' value='Join in!'/>
+        <input className='bttn-1 submit-button' type='submit' value='Sign In'/>
       </form>
       {
         errors.map(error => <p key={error} className='form-error'>{error}</p>)

@@ -11,8 +11,8 @@ function ChatroomSearchListItem({ chatroom, selectedChatroom, handleSelectedChat
 
   return (
     <div className={selectedChatroom === id ? 'search-item selected' : 'search-item'} onClick={handleChatroomClick}>
-      <img src={image_url || logo} alt={image_url === '' ? 'babble' : 'image'} />
       <h3>{name}</h3>
+      <img src={image_url || logo} alt={image_url === '' ? 'babble' : 'image'} />
       <p>{bio}</p>
     </div>
   )

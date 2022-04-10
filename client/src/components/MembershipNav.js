@@ -7,7 +7,7 @@ function MembershipNav({ memberships }) {
   return (
     <div className='membership-nav'>
       <nav>
-        <h3>Spoke in:</h3>
+        <h3>Your Channels</h3>
         {
           memberships.map(({id, name, image_url}) => {
             return (
@@ -19,8 +19,9 @@ function MembershipNav({ memberships }) {
                 isActive ? activeStyle : undefined
                 }
                 >
-                  <img src={image_url || logo} alt={image_url === '' ? 'babble' : 'image'} />
+                 
                   <h4>{name}</h4>
+                  <img src={image_url || logo} alt={image_url === '' ? 'babble' : 'image'} />
               </NavLink>
             )
           })

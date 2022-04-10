@@ -62,26 +62,6 @@ function UserProfile({ user, handleUser }) {
         </div>
         <input className='bttn-1' type='submit' value='Save' disabled={user.image_url === image}/>
       </form>
-      <h2>Membership Logs</h2>
-      <div className='membership-logs-container'>
-        {
-          profileInfo.chatlog ? (
-            profileInfo.chatlog.map(({chatroom, messages}) => (
-              <div key={chatroom}>
-                <h3>{chatroom}</h3>
-                <textarea 
-                  readOnly
-                  rows='5'
-                  cols='40'
-                  value={
-                    messages.map(({ content, created_at }) => (`Message: ${content}\nCreated At: ${created_at}\n`)).join('\n')
-                  }
-                />
-              </div>
-            ))
-          ) : ''
-        }
-      </div>
     </div>
   )
 }

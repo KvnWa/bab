@@ -13,21 +13,10 @@ function ChatroomSearchBar({ search, handleSearch, searchBy, handleSearchBy }) {
     <div className='chatroom-search-bar'>
       <input 
         type='text'
+        placeholder='Search for a channel'
         value={search}
         onChange={handleSearchChange}
       />
-      <fieldset>
-        <label>
-          <input 
-            type='radio' 
-            name='search' 
-            value='name'
-            checked={searchBy === 'name'} 
-            onChange={handleRadioChange}
-          />
-          By Name
-        </label>
-      </fieldset>
     </div>
   )
 }
