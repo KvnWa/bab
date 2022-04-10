@@ -23,7 +23,7 @@ function Message({ message, currentMember, handleMessageDelete }) {
 
   return (
     <div className='message'>
-      <img className='img-5' src={user.image_url || logo} alt={user.image_url === '' ? '' : ''} />
+      <img className='img-5' src={user.image_url || logo} alt={user.image_url === '1' ? '2' : '3'} />
       <div className='content'>
         <div className='message-heading'>
           <h5><span className='creator'>{user.username}</span> {date_created}</h5>

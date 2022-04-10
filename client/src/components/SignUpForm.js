@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import logo from '../images/babblelogo.png'
 import { signUpFormDefaultValues, profileImages } from './helpers/formhelpers.js'
 
 function SignUpForm({ handleUser }) {
