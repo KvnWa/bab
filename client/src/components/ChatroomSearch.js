@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-
+import ChatroomSearchBar from './ChatroomSearchBar'
+import ChatroomSearchList from './ChatroomSearchList'
+import ChatroomSearchListItem from './ChatroomSearchListItem'
 
 function ChatroomSearch({ handleChatroomMembership }) {
   const [chatrooms, setChatrooms] = useState([])
@@ -66,7 +68,7 @@ function ChatroomSearch({ handleChatroomMembership }) {
           errors.map(error => <p key={error}>{error}</p>)
         }
       </div>
-      <button className='search-submit-button' onClick={handleChatroomJoin}>Join Parlor Room</button>
+      <button className='search-submit-button' onClick={handleChatroomJoin}>Join Channel</button>
     </div> 
   )
 }
