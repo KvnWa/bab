@@ -30,10 +30,6 @@ function Header({ handleUser, user }) {
   return (
     <>
       <header className='main-header'>
-        <Link className='heading' to='/'>
-          <h1>Babble</h1>
-          <img className='img-3' src={logo} alt='babble' /> 
-        </Link>
         <nav className='main-header-nav'>
           {
             windowWidth > 740 ? (
@@ -45,7 +41,7 @@ function Header({ handleUser, user }) {
                 }
                 end={pathname === '/chatrooms/search'}
               >
-                Memberships
+                Subscribed
               </NavLink>
             ) : ''
           }
@@ -59,12 +55,18 @@ function Header({ handleUser, user }) {
                     isActive ? activeStyle : undefined
                   }
                 >
-                  Channels
+                  Explore
                 </NavLink>
               </>
             ) : ''
           }
+          <div>
+           <Link className='heading' to='/'>
+          <img className='img-3' src={logo} alt='babble' /> 
+        </Link>
+        </div>
           <div onClick={handleisComponentVisible} ref={ref}>
+            
             <div>
               <img className='img-5 pointer' src={user.image_url ? user.image_url : logo} alt='profile'/>
               <span className={isComponentVisible ? 'rotate' : ''}>◁</span>
