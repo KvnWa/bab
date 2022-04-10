@@ -31,8 +31,8 @@ function Header({ handleUser, user }) {
     <>
       <header className='main-header'>
         <Link className='heading' to='/'>
-          <h1>Ye Ole ChatterBox</h1>
-          <img className='img-3' src={logo} alt='moustache man' /> 
+          <h1>Babble</h1>
+          <img className='img-3' src={logo} alt='babble' /> 
         </Link>
         <nav className='main-header-nav'>
           {
@@ -59,7 +59,7 @@ function Header({ handleUser, user }) {
                     isActive ? activeStyle : undefined
                   }
                 >
-                  Parlor Room Exploration
+                  Channels
                 </NavLink>
               </>
             ) : ''
@@ -86,7 +86,7 @@ function Header({ handleUser, user }) {
                       className='dropdown-menu-nav-button' 
                       to='/chatrooms/search'
                     >
-                    Parlor Room Exploration
+                    Channels
                     </Link>
                   </>
                 ) : ''
