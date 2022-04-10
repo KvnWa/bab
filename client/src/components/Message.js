@@ -33,7 +33,7 @@ function Message({ message, currentMember, handleMessageDelete }) {
                 className='icon' 
                 onClick={() => navigate(`/chatrooms/${currentMember.chatroom_id}/messages/${id}/edit`)}
                 title='edit'
-              >✍︎</button> 
+              >E</button> 
               <button 
                 className='icon' 
                 onClick={handleDelete}

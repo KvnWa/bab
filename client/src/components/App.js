@@ -7,7 +7,7 @@ import Chatroom from "./Chatroom";
 import ChatroomSearch from "./ChatroomSearch";
 import MembershipNav from "./MembershipNav";
 import Welcome from './Welcome'
-import UserProfile from "./UserProfile";
+import UserProfile from "./Profile";
 
 function App() {
   const [user, setUser] = useState(null)

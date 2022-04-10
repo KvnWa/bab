@@ -1,6 +1,6 @@
 import React, { useEffect, useReducer } from 'react'
 import { useParams, Routes, Route } from 'react-router-dom'
-import ChatroomHeader from './ChatroomHeader'
+import ChatroomHeader from './RoomName'
 import Messages from './Messages'
 import Members from './Members'
 import Messenger from './Messenger'
