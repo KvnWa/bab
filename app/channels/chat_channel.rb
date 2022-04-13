@@ -16,4 +16,12 @@ class ChatChannel < ApplicationCable::Channel
     )
     ActionCable.server.broadcast("#{params[:room]}", MessageSerializer.new(message).as_json)
   end
+
+  def destroy(payload)
+    message = current_user.messages.destroy(
+      content: payload['message']['content'], 
+      chatroom_id: payload['message']['chatroom_id']
+    )
+    ActionCable.server.broadcast("#{params[:room]}", MessageSerializer.new(message).as_json)
+  end
 end
