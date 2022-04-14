@@ -9,7 +9,7 @@ function SignUpForm({ handleUser }) {
     username: '',
     password: '',
     password_confirmation: '',
-    image_url: ''
+    image_url: 'https://api.multiavatar.com/4645654'
   }
   
   const [formData, setFormData] = useState(signUpFormDefaultValues)
