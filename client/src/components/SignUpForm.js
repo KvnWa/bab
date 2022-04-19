@@ -10,7 +10,7 @@ function SignUpForm({ handleUser }) {
     username: '',
     password: '',
     password_confirmation: '',
-    image_url: 'https://cdn-icons.flaticon.com/png/128/3940/premium/3940446.png?token=exp=1650294438~hmac=3d80ec9456ebda3ff4a47d053779dcb0'
+    image_url: 'https://cdn-icons.flaticon.com/png/128/924/premium/924915.png?token=exp=1650397170~hmac=71193476b06e9065dd9a5629d97bb29c'
   }
   
   const [formData, setFormData] = useState(signUpFormDefaultValues)
@@ -94,7 +94,7 @@ function SignUpForm({ handleUser }) {
             <label>Choose Profile Image:
               <br />
               <select name='image_url' value={formData.image_url} onChange={handleFormChange}>
-                <option value='https://cdn-icons.flaticon.com/png/128/3940/premium/3940446.png?token=exp=1650294438~hmac=3d80ec9456ebda3ff4a47d053779dcb0'>Default</option>
+                <option value='https://cdn-icons.flaticon.com/png/128/924/premium/924915.png?token=exp=1650397170~hmac=71193476b06e9065dd9a5629d97bb29c'>Default</option>
                 {
                   profileImages.map(({ name, image_url }) =>
                     <option key={name} value={image_url}>{name}</option>

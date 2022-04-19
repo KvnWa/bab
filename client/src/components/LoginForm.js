@@ -10,7 +10,7 @@ function LoginForm({ handleUser }) {
   const [formData, setFormData] = useState(defaultLoginFormData)
   const [errors, setErrors] = useState([])
 
-  
+  //spread form data over the array
 
   function handleFormChange(e) {
     const { name, value } = e.target

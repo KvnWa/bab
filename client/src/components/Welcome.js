@@ -6,7 +6,9 @@ import welcome3 from '../images/welcome3.svg';
 
 
 
+
 function Welcome({ user: { image_url, username } }) {
+
 
   const activeStyle = { backgroundColor: '#121212', color: '#ffff' }
 
@@ -26,8 +28,14 @@ function Welcome({ user: { image_url, username } }) {
           <img src={welcome1} />
           <img src={welcome2} />
           <img src={welcome3} />
+          <div>
+          <script src="https://tokbox.com/embed/embed/ot-embed.js?embedId=73791ee3-5f21-48f6-9bba-a99309b98792&room=DEFAULT_ROOM"></script>
+          </div>
         </div>
       </div>
+     
+
+      
     </div >
   )
 }
