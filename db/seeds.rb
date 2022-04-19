@@ -16,7 +16,7 @@ Chatroom.create ([
   },
   {
     name: 'Sports',
-    image_url: 'https://cdn-icons.flaticon.com/png/128/5540/premium/5540420.png?token=exp=1650380130~hmac=dd5c49f22a3f46461b20ca9665b32670',
+    image_url: 'https://cdn-icons.flaticon.com/png/128/2681/premium/2681996.png?token=exp=1650396977~hmac=28a6f0180062abcd32dd1dd8e29ccfd0',
     bio: 'All About Sports'
   },
   {
@@ -63,20 +63,20 @@ third_user = User.create(username: 'francis', password: '1234', password_confirm
 first_chatroom = Chatroom.first
 first_chatroom.chatroom_memberships.create(user: first_user)
 first_chatroom.chatroom_memberships.create(user: second_user)
-first_user.messages.create(content: 'Have you heard the new Jack Harlow Song?', chatroom: first_chatroom)
-second_user.messages.create(content: 'Yea it was very disappointing', chatroom: first_chatroom)
-first_user.messages.create(content: 'The chorus carries', chatroom: first_chatroom)
+first_user.messages.create(content: 'What is your favorite song?', chatroom: first_chatroom)
+second_user.messages.create(content: 'White ferrari ', chatroom: first_chatroom)
+first_user.messages.create(content: 'Oooh that is a good one', chatroom: first_chatroom)
 
 second_chatroom = Chatroom.second
 second_chatroom.chatroom_memberships.create(user: first_user)
-first_user.messages.create(content: 'Fivio album slaps', chatroom: second_chatroom)
-first_user.messages.create(content: 'So many good samples', chatroom: second_chatroom)
-first_user.messages.create(content: 'Whats my name is my fav', chatroom: second_chatroom)
+first_user.messages.create(content: 'Who do you think is going to win NBA MVP?', chatroom: second_chatroom)
+first_user.messages.create(content: 'probably Giannis', chatroom: second_chatroom)
+first_user.messages.create(content: 'u right', chatroom: second_chatroom)
 
 
 third_chatroom = Chatroom.third
 third_chatroom.chatroom_memberships.create(user: second_user)
-second_user.messages.create(content: 'Idk much about rock music', chatroom: third_chatroom)
-second_user.messages.create(content: 'random messages', chatroom: third_chatroom)
-second_user.messages.create(content: 'something about electric guitars', chatroom: third_chatroom)
+second_user.messages.create(content: 'are you going to coachella this year?', chatroom: third_chatroom)
+second_user.messages.create(content: 'nah I didnt get tickets', chatroom: third_chatroom)
+second_user.messages.create(content: 'same', chatroom: third_chatroom)
 puts 'Seeding Complete'
