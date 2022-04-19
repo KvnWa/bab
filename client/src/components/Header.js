@@ -69,7 +69,7 @@ function Header({ handleUser, user }) {
         </div>
           <div onClick={handleisComponentVisible} ref={ref}>
             <div className="header-right">
-              <button onClick={handleLogout} className="nav-button2">Logout</button>
+              <button onClick={handleLogout} className="nav-button2" style={{backgroundColor: 'white'}}>Logout</button>
             </div>
           </div>
         </nav>

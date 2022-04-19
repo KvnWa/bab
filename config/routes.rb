@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     resources :users, only: [:update]
     resources :messages, only: [:show, :destroy]
   end
+  root to: "calls#root"
+  resources :calls, only: :create
 
   mount ActionCable.server => '/cable'
   

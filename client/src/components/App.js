@@ -9,6 +9,8 @@ import Welcome from './Welcome'
 import UserProfile from "./Profile";
 
 function App() {
+
+  
   const [user, setUser] = useState(null)
   const [authenticated, setAuthenticated] = useState(false)
 

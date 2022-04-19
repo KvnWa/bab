@@ -10,55 +10,55 @@ puts 'Seeding...'
 
 Chatroom.create ([
   {
-    name: 'Pop',
-    image_url: '',
-    bio: 'All About Pop Music'
+    name: 'Music',
+    image_url: 'https://cdn-icons-png.flaticon.com/128/3659/3659784.png',
+    bio: 'All About Music'
   },
   {
-    name: 'Hip-Hop and Rap',
-    image_url: '',
-    bio: 'All About Hip-Hop'
+    name: 'Sports',
+    image_url: 'https://cdn-icons.flaticon.com/png/128/5540/premium/5540420.png?token=exp=1650380130~hmac=dd5c49f22a3f46461b20ca9665b32670',
+    bio: 'All About Sports'
   },
   {
-    name: 'Rock',
-    image_url: '',
-    bio: 'All About Rock Music'
+    name: 'Events',
+    image_url: 'https://cdn-icons-png.flaticon.com/128/3771/3771178.png',
+    bio: 'All About Events'
   },
   {
-    name: 'EDM',
-    image_url: '',
-    bio: 'All About EDM Music'
+    name: 'Code',
+    image_url: 'https://cdn-icons-png.flaticon.com/128/2881/2881142.png',
+    bio: 'All About Coding'
   },
   {
-    name: 'Latin',
-    image_url: '',
-    bio: 'All About Latin Music'
+    name: 'Stocks',
+    image_url: 'https://cdn-icons-png.flaticon.com/128/2910/2910311.png',
+    bio: 'All About Stocks'
   },
   {
-    name: 'Indie',
-    image_url: '',
-    bio: 'All About Indie Music'
+    name: 'Crypto',
+    image_url: 'https://cdn-icons-png.flaticon.com/128/4843/4843056.png',
+    bio: 'All About Crypto'
   },
   {
-    name: 'Classical',
-    image_url: '',
-    bio: 'All About Classical Music'
+    name: 'NFT',
+    image_url: 'https://cdn-icons-png.flaticon.com/128/6229/6229217.png',
+    bio: 'All About NFTs'
   },
   {
-    name: 'K-Pop',
-    image_url: '',
-    bio: 'All About K-Pop Music'
+    name: 'Games',
+    image_url: 'https://cdn-icons-png.flaticon.com/128/1083/1083364.png',
+    bio: 'All About Games'
   },
   {
-    name: 'Country',
-    image_url: '',
-    bio: 'All About Country Music'
+    name: 'Health',
+    image_url: 'https://cdn-icons-png.flaticon.com/128/2791/2791163.png',
+    bio: 'All About Health'
   }
 ])
 
-first_user = User.create(username: 'harris', password: '1234', password_confirmation: '1234', image_url: 'https://static01.nyt.com/images/2021/09/30/fashion/29melting-face-emoji/29melting-face-emoji-videoSixteenByNineJumbo1600.jpg')
-second_user = User.create(username: 'lynden', password: '1234', password_confirmation: '1234', image_url: 'https://static01.nyt.com/images/2021/09/30/fashion/29melting-face-emoji/29melting-face-emoji-videoSixteenByNineJumbo1600.jpg')
-third_user = User.create(username: 'francis', password: '1234', password_confirmation: '1234', image_url: 'https://static01.nyt.com/images/2021/09/30/fashion/29melting-face-emoji/29melting-face-emoji-videoSixteenByNineJumbo1600.jpg')
+first_user = User.create(username: 'harris', password: '1234', password_confirmation: '1234', image_url: 'https://cdn-icons-png.flaticon.com/128/3135/3135715.png')
+second_user = User.create(username: 'lynden', password: '1234', password_confirmation: '1234', image_url: 'https://cdn-icons-png.flaticon.com/128/236/236832.png')
+third_user = User.create(username: 'francis', password: '1234', password_confirmation: '1234', image_url: 'https://cdn-icons.flaticon.com/png/128/4140/premium/4140048.png?token=exp=1650293666~hmac=6797f6e21cfedb726d8210b6d37216f9')
 
 first_chatroom = Chatroom.first
 first_chatroom.chatroom_memberships.create(user: first_user)

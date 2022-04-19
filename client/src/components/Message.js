@@ -1,6 +1,8 @@
 import React from 'react'
 import logo from '../images/babblelogo.png'
 import { useNavigate } from 'react-router-dom'
+import edit from '../images/edit2.png';
+import exit from '../images/x-svgrepo-com.svg';
 
 function Message({ message, currentMember, handleMessageDelete }) {
   const { id, date_created, content, user} = message
@@ -33,12 +35,12 @@ function Message({ message, currentMember, handleMessageDelete }) {
                 className='icon' 
                 onClick={() => navigate(`/chatrooms/${currentMember.chatroom_id}/messages/${id}/edit`)}
                 title='edit'
-              >E</button> 
+              ><img src="https://cdn-icons-png.flaticon.com/128/1828/1828911.png" alt="edit"/></button> 
               <button 
                 className='icon' 
                 onClick={handleDelete}
                 title='delete'
-              >X</button>
+              ><img src={exit} alt="exit"/></button>
             </div>
             : ''}
         </div>

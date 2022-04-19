@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { ToastContainer, toast } from "react-toastify";
 import logo from '../images/babblelogo.png'
 import { profileImages } from './helpers/formhelpers.js'
 
@@ -9,7 +10,7 @@ function SignUpForm({ handleUser }) {
     username: '',
     password: '',
     password_confirmation: '',
-    image_url: 'https://api.multiavatar.com/4645654'
+    image_url: 'https://cdn-icons.flaticon.com/png/128/3940/premium/3940446.png?token=exp=1650294438~hmac=3d80ec9456ebda3ff4a47d053779dcb0'
   }
   
   const [formData, setFormData] = useState(signUpFormDefaultValues)
@@ -47,6 +48,8 @@ function SignUpForm({ handleUser }) {
       }
     })
   }
+
+  
 
   return (
     <div className='sign-up-form'>
@@ -86,12 +89,12 @@ function SignUpForm({ handleUser }) {
               />
             </label>
           </div>
-          {/* <div className='sign-up-form-container-2'>
+          <div className='sign-up-form-container-2'>
             <br />
             <label>Choose Profile Image:
               <br />
               <select name='image_url' value={formData.image_url} onChange={handleFormChange}>
-                <option value=''>Default</option>
+                <option value='https://cdn-icons.flaticon.com/png/128/3940/premium/3940446.png?token=exp=1650294438~hmac=3d80ec9456ebda3ff4a47d053779dcb0'>Default</option>
                 {
                   profileImages.map(({ name, image_url }) =>
                     <option key={name} value={image_url}>{name}</option>
@@ -101,7 +104,7 @@ function SignUpForm({ handleUser }) {
               <br />
               <img className='img-2' src={formData.image_url ||  logo} alt='default'/>
             </label>
-          </div> */}
+          </div>
         </div>
         <input className='bttn-1 submit-button' type='submit' value='Register'/>
       </form>

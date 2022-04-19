@@ -1,16 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@200&display=swap');
+
+
+
 @media (height < 800px) {
     #root {
       height: 46.7rem;
     }
   }
 
-  body, button {
+  /* body, button {
     color: #121212;
-    background: #0F2027;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    font-family: 'Arial', serif;
-  }
+    background: -webkit-linear-gradient(to bottom, #2C5364, #203A43, #0F2027);  
+    background: linear-gradient(to bottom, #2C5364, #203A43, #0F2027);
+    font-family: 'Avenir', serif;
+  } */
+  body {
+    padding: 0;
+    margin: 0;
+    background: -moz-linear-gradient(-45deg, #183850 0, #183850 25%, #192c46 50%, #22254c 75%, #22254c 100%);
+    background: -webkit-linear-gradient(-45deg, #183850 0, #183850 25%, #192c46 50%, #22254c 75%, #22254c 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+ }
+  
+  
   
   #root {
     height: 100vh;
@@ -57,7 +71,7 @@
   }
   
   .nav-button {
-    color: #ffff;
+    color: #121212;
     cursor: pointer;
     font-size: 1rem;
     border-radius: 30px;
@@ -65,16 +79,19 @@
     padding: .2rem 1rem;
     text-decoration: none;
     border: 1px solid black;
-    background-color: grey;
+    background-color: white;
+    font-weight: 900;
   }
 
   .nav-button2 {
-    color: #ffff;
+    color: #121212;
     cursor: pointer;
     font-size: 1rem;
     border-radius: 30px;
     text-decoration: none;
     border: 1px solid black;
+    background-color: white;
+    width: 100px;
   }
   
  
@@ -84,6 +101,12 @@
     color: white;
     border: 1px solid black;
     background-color: white;
+    width: 2em;
+  }
+
+  .icon img {
+    object-fit: contain;
+    width: 100%;
   }
   
   /************** Images **************/
@@ -228,9 +251,9 @@
   .main-header {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: center;
-    /* border-bottom: 2px solid black; */
-    grid-area: 1 / 1 / span 1 / span 100;
+    justify-content: space-evenly;
+    grid-area: 1 / 1  / span 1 / span 100;
+  
    
   }
 
@@ -255,7 +278,7 @@
   .main-header-nav {
     display: flex;
     align-items: flex-end;
-    justify-content: space-around;
+    justify-content: center;
   }
   
   
@@ -267,7 +290,8 @@
     text-align: center;
     grid-area: 2 / 1 / span 7 / span 8;
     grid: repeat(6, 1fr) / repeat(16, 1fr);
-    margin-bottom: 30rem;
+    /* margin-bottom: 15rem; */
+    color: white;
   }
   
   .welcome img {
@@ -281,6 +305,9 @@
     align-self: end;
     grid-area: 5 / 7 / span 1 / span 4;
   }
+  .welcome h1 {
+    font-size: 3.5rem;
+  }
   
   .welcome .username {
     font-weight: bold;
@@ -288,19 +315,45 @@
     text-transform: capitalize;
   }
   
+  .welcome-i {
+    display: flex;
+    /* grid-area: 2/ 1 / span 7/ span 8; */
+    justify-content: center;
+    align-items: center;
+    max-width: 30rem;
+  }
+
+  .welcome-i img {
+    object-fit: contain;
+    width: 100%;
+  }
   /************** Chatroom Search **************/
   
   .chatroom-search {
     display: grid;
-    
-    /* grid-area: 2 / 1 / span 7 / span 8;
-    grid: repeat(8, 1fr) / repeat(9, 1fr); */
+    grid-area: 2 / 1 / span 7 / span 8;
+    /* grid: repeat(8, 1fr) / repeat(9, 1fr); */
+    /* padding: 10rem 10rem 10rem 10rem; */
+  }
+
+  .chatroom-container {
+    /* background-color: black; */
+    align-items: center;
+    justify-content: center;
+    /* grid-area: 2 / 1 / 5 / 10; */
   }
   
   .chatroom-search-bar {
     align-items: flex-end;  
-    padding-top: 10rem;
+    padding-top: 3rem;
+    margin: 0 auto;
+    /* top: 100px; */
   
+  }
+
+  .chatroom-top {
+    /* display: flex; */
+    text-align: center;
   }
   
   .chatroom-search-bar input[type=text]{
@@ -310,11 +363,14 @@
 
   
   .chatroom-search-list-grid {
-    padding-top: 3rem;
+    padding-top: 1rem;
     padding-left: 5.75rem;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3,1fr);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
   
   .search-item {
@@ -352,11 +408,10 @@
     font-size: 1.5rem;
     text-align: center;
     align-self: center;
-    position: absolute;
     bottom: 1rem;
     left: 31rem;
     color: white;
-    /* grid-area: 7 / 3 / span 1 / span 5; */
+    
   }
   
   .search-submit-button {
@@ -364,13 +419,13 @@
     cursor: pointer;
     align-self: start;
     font-size: 1.1rem;
-    border-radius: 5px;
+    border-radius: 50px;
     padding: .2rem 2rem;
-    margin: 2rem 0 3rem;
+    margin: 2rem 0 0rem;
     justify-self: center;
     background-color: #121212;
     color: white;
-    grid-area: a;
+    background-color: green !important;
   }
   
   /*********** Membership Navigation ***********/
@@ -380,6 +435,7 @@
     grid-template-rows: 100%;
     grid-template-columns: 1fr 6fr;
     grid-area: 2 / 1 / span 7 / span 8;
+    color: white;
   }
   
   .membership-nav nav {
@@ -390,7 +446,7 @@
   
   .membership-nav-button {
     display: grid;
-    color: #ffff;
+    color: white;
     justify-items: left;
     align-items: center;
     text-decoration: none;
@@ -424,7 +480,7 @@
     margin: 0 auto;
     border-bottom: 1.5px solid #121212;
     margin-bottom: 1rem;
-    grid-area: 1 / 1 / span 1 / span 9;
+    grid-area: 1 / 1 / span 1 / span 8;
   }
   
   .members {
@@ -433,6 +489,7 @@
     text-transform: capitalize;
     border-left: 2px solid black;
     grid-area: 2 / 9 / span 7 / span 1;
+    color: white;
   }
   
   .chatroom-withdrawal {
@@ -493,7 +550,11 @@
   }
   
   .message-buttons {
-    display: flex;
+  display: flex;
+  }
+
+  .message-buttons {
+    object-fit: contain;
   }
   
   /************** Messenger **************/

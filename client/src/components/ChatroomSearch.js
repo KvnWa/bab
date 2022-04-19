@@ -12,11 +12,11 @@ function ChatroomSearch({ handleChatroomMembership }) {
   const [errors, setErrors] = useState([])
 
   const navigate = useNavigate()
-  
+
   useEffect(() => {
     fetch('/api/chatrooms')
-    .then(r => r.json())
-    .then(data => setChatrooms(() => data))
+      .then(r => r.json())
+      .then(data => setChatrooms(() => data))
   }, [])
 
   function handleChatroomJoin() {
@@ -27,16 +27,16 @@ function ChatroomSearch({ handleChatroomMembership }) {
       },
       body: JSON.stringify({})
     })
-    .then(r => {
-      if (r.ok) {
-        r.json().then(chatroom => {
-          handleChatroomMembership(chatroom)
-          navigate(`/chatrooms/${chatroom.id}`)
-        })
-      } else {
-        r.json().then(({errors}) => setErrors(() => errors))
-      }
-    })
+      .then(r => {
+        if (r.ok) {
+          r.json().then(chatroom => {
+            handleChatroomMembership(chatroom)
+            navigate(`/chatrooms/${chatroom.id}`)
+          })
+        } else {
+          r.json().then(({ errors }) => setErrors(() => errors))
+        }
+      })
   }
 
   function handleSearch(search) {
@@ -57,20 +57,25 @@ function ChatroomSearch({ handleChatroomMembership }) {
 
   return (
     <div className='chatroom-search'>
-      
-      <ChatroomSearchList>
-        {
-          chatroomSearchResults().map(chatroom => <ChatroomSearchListItem key={chatroom.id} chatroom={chatroom} selectedChatroom={selectedChatroom} handleSelectedChatroom={handleSelectedChatroom}/>)
-        }
-      </ChatroomSearchList>
-      <div className='chatroom-search-error'>
-        {
-          errors.map(error => <p key={error}>{error}</p>)
-        }
+      <div className='chatroom-container'>
+        <div className="chatroom-top">
+          <ChatroomSearchBar search={search} handleSearch={handleSearch} searchBy={searchBy} handleSearchBy={handleSearchBy} />
+          <button className='search-submit-button' onClick={handleChatroomJoin}>Join Channel</button>
+        </div>
+
+        <ChatroomSearchList>
+          {
+            chatroomSearchResults().map(chatroom => <ChatroomSearchListItem key={chatroom.id} chatroom={chatroom} selectedChatroom={selectedChatroom} handleSelectedChatroom={handleSelectedChatroom} />)
+          }
+        </ChatroomSearchList>
+        <div className='chatroom-search-error'>
+          {
+            errors.map(error => <p key={error}>{error}</p>)
+          }
+        </div>
+
       </div>
-      <ChatroomSearchBar search={search} handleSearch={handleSearch} searchBy={searchBy} handleSearchBy={handleSearchBy}/>
-      <button className='search-submit-button' onClick={handleChatroomJoin}>Join Channel</button>
-    </div> 
+    </div>
   )
 }
 
