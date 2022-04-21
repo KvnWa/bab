@@ -1,11 +1,9 @@
 import React from 'react'
 import useWindowSize from '../hooks/useWindowSize'
-import useComponentVisible from '../hooks/useComponentVisible'
 import { Link, NavLink, Outlet, useNavigate, useLocation } from 'react-router-dom'
 import logo from '../images/babblelogo.png'
 
 function Header({ handleUser, user }) {
-  const { ref, isComponentVisible, setIsComponentVisible } = useComponentVisible(false)
   const [windowWidth] = useWindowSize();
   const navigate = useNavigate()
   const { pathname } = useLocation()
@@ -21,10 +19,6 @@ function Header({ handleUser, user }) {
           navigate('/')
         }
       })
-  }
-
-  function handleisComponentVisible() {
-    setIsComponentVisible(isComponentVisible => !isComponentVisible)
   }
 
   return (
@@ -67,9 +61,8 @@ function Header({ handleUser, user }) {
               <img className='img-3' src={logo} alt='babble' />
             </Link>
           </div>
-          <div onClick={handleisComponentVisible} ref={ref}>
+          <div>
             <div className="header-right">
-              <NavLink className='nav-button' to='/profile'>Profile</NavLink>
               <button onClick={handleLogout} className="nav-button2" style={{ backgroundColor: 'white' }}>Logout</button>
             </div>
           </div>

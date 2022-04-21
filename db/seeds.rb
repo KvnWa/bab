@@ -16,7 +16,7 @@ Chatroom.create ([
   },
   {
     name: 'Sports',
-    image_url: 'https://cdn-icons.flaticon.com/png/128/5564/premium/5564944.png?token=exp=1650552040~hmac=dc83c8e5abfed3bdf96cfa12c70bff22',
+    image_url: 'https://cdn-icons-png.flaticon.com/128/889/889455.png',
     bio: 'All About Sports'
   },
   {
@@ -56,7 +56,7 @@ Chatroom.create ([
   }
 ])
 
-first_user = User.create(username: 'harris', password: '1234', password_confirmation: '1234', image_url: 'https://cdn-icons-png.flaticon.com/128/3135/3135715.png')
+first_user = User.create(username: 'john', password: '1234', password_confirmation: '1234', image_url: 'https://cdn-icons-png.flaticon.com/128/3135/3135715.png')
 second_user = User.create(username: 'lynden', password: '1234', password_confirmation: '1234', image_url: 'https://cdn-icons-png.flaticon.com/128/236/236832.png')
 third_user = User.create(username: 'francis', password: '1234', password_confirmation: '1234', image_url: 'https://cdn-icons.flaticon.com/png/128/4140/premium/4140048.png?token=exp=1650293666~hmac=6797f6e21cfedb726d8210b6d37216f9')
 

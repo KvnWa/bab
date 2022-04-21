@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from "react-toastify";
 import logo from '../images/babblelogo.png'
-import { profileImages } from './helpers/formhelpers.js'
+import { profileImages } from './helpers/form.js'
 
-function SignUpForm({ handleUser }) {
+function SignUp({ handleUser }) {
 
   const signUpFormDefaultValues = {
     username: '',
@@ -118,4 +118,4 @@ function SignUpForm({ handleUser }) {
   )
 }
 
-export default SignUpForm
+export default SignUp

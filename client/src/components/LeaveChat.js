@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-function ChatroomWithdrawal({ currentMember, handleChatroomMembershipWithdrawal }) {
+function LeaveChat({ currentMember, withdrawal }) {
   const navigate = useNavigate()
 
   function handleChatroomWithdrawal() {
@@ -11,7 +11,7 @@ function ChatroomWithdrawal({ currentMember, handleChatroomMembershipWithdrawal 
     .then(r => {
       if (r.ok) {
         r.json().then(chatroom => {
-          handleChatroomMembershipWithdrawal(chatroom)
+          withdrawal(chatroom)
           navigate('/chatrooms')
         })
       }
@@ -28,4 +28,4 @@ function ChatroomWithdrawal({ currentMember, handleChatroomMembershipWithdrawal 
   )
 }
 
-export default ChatroomWithdrawal
+export default LeaveChat

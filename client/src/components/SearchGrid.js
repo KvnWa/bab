@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ChatroomSearchList({ children }) {
+function SearchGrid({ children }) {
   return (
     <div className='chatroom-search-list-grid'>
       {children}
@@ -8,4 +8,4 @@ function ChatroomSearchList({ children }) {
   )
 }
 
-export default ChatroomSearchList
+export default SearchGrid

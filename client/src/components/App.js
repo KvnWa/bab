@@ -3,10 +3,9 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Login from './Login'
 import Header from './Header'
 import Chatroom from "./Chatroom";
-import ChatroomSearch from "./ChatroomSearch";
+import ChatroomSearch from "./Search";
 import MembershipNav from "./MembershipNav";
 import Welcome from './Welcome'
-import UserProfile from "./Profile";
 
 function App() {
 
@@ -32,7 +31,7 @@ function App() {
     setUser(() => user)
   }
 
-  function handleChatroomMembership(chatroom) {
+  function handleMember(chatroom) {
     setUser(user => {
       const updatedUser = { ...user }
       updatedUser.memberships = [ ...user.memberships, chatroom ]
@@ -40,7 +39,7 @@ function App() {
     })
   }
 
-  function handleChatroomMembershipWithdrawal(chatroom) {
+  function withdrawal(chatroom) {
     setUser(user => {
       const updatedUser = { ...user };
       updatedUser.memberships = user.memberships.filter(membership => membership.id !== chatroom.id)
@@ -48,7 +47,7 @@ function App() {
     })
   }
 
-  function unauthorizedUser() {
+  function unauth() {
     if (!authenticated) {
       return <div></div>
     } else {
@@ -61,11 +60,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Header handleUser={handleUser} user={user}/>}>
           <Route path="chatrooms" element={<MembershipNav memberships={user.memberships}/>}>
-            <Route path=":chatroomId/*" element={<Chatroom user={user} handleChatroomMembershipWithdrawal={handleChatroomMembershipWithdrawal}/>}/>
+            <Route path=":chatroomId/*" element={<Chatroom user={user} withdrawal={withdrawal}/>}/>
           </Route>
-          <Route path="chatrooms/search" element={<ChatroomSearch handleChatroomMembership={handleChatroomMembership} />}/>
+          <Route path="chatrooms/search" element={<ChatroomSearch handleMember={handleMember} />}/>
           <Route index element={<Welcome user={user}/>} />
-          <Route path="profile" element={<UserProfile user={user} handleUser={handleUser} />}/>
         </Route>
         <Route path="*" element={<Navigate to="/"/> }/>
       </Routes>
@@ -74,7 +72,7 @@ function App() {
 
   return (
     <div className={!user ? 'login' : 'main-site-container'}>
-      { !user ? unauthorizedUser() : authorizedUser() }
+      { !user ? unauth() : authorizedUser() }
     </div>
   );
 }

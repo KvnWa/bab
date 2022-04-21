@@ -1,10 +1,10 @@
 import React, { useEffect, useReducer, useState } from 'react'
 import { useParams, Routes, Route } from 'react-router-dom'
-import ChatroomHeader from './RoomName'
+import Room from './Room'
 import Messages from './Messages'
-import Members from './Members'
+import Members from './MemberList'
 import Messenger from './Messenger'
-import ChatroomWithdrawal from './ChatroomWithdrawal'
+import ChatroomWithdrawal from './LeaveChat'
 import Cable from 'actioncable'
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button'
@@ -47,7 +47,7 @@ function reducer(state, action) {
   }
 }
 
-function Chatroom({ user, handleChatroomMembershipWithdrawal }) {
+function Chatroom({ user, withdrawal }) {
 
   const [show, setShow] = useState(false);
   const [state, dispatch] = useReducer(reducer, {
@@ -140,10 +140,10 @@ function Chatroom({ user, handleChatroomMembershipWithdrawal }) {
             />
           </Modal.Body>
         </Modal>
-        <ChatroomHeader name={chatroom.name} />
+        <Room name={chatroom.name} />
         <Messages messages={chatroom.messages} currentMember={chatroom.current_member} handleMessageDelete={handleMessageDelete} />
         <Members members={chatroom.members} />
-        <ChatroomWithdrawal currentMember={chatroom.current_member} handleChatroomMembershipWithdrawal={handleChatroomMembershipWithdrawal} />
+        <ChatroomWithdrawal currentMember={chatroom.current_member} withdrawal={withdrawal} />
         <Routes>
           <Route index element={<Messenger chatroom={chatroom.id} handleChatroomMessage={handleMessageNew} />} />
           <Route path='messages/:messageId/edit' element={<Messenger chatroom={chatroom.id} handleChatroomMessage={handleMessageEdit} />} />

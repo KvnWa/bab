@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import ChatroomSearchBar from './ChatroomSearchBar'
-import ChatroomSearchList from './ChatroomSearchList'
-import ChatroomSearchListItem from './ChatroomSearchListItem'
+import ChatroomSearchBar from './SearchBar'
+import SearchGrid from './SearchGrid'
+import ChatroomSearchListItem from './SearchItem'
 
-function ChatroomSearch({ handleChatroomMembership }) {
+function ChatroomSearch({ handleMember }) {
   const [chatrooms, setChatrooms] = useState([])
   const [search, setSearch] = useState('')
   const [searchBy, setSearchBy] = useState('name')
@@ -30,7 +30,7 @@ function ChatroomSearch({ handleChatroomMembership }) {
       .then(r => {
         if (r.ok) {
           r.json().then(chatroom => {
-            handleChatroomMembership(chatroom)
+            handleMember(chatroom)
             navigate(`/chatrooms/${chatroom.id}`)
           })
         } else {
@@ -59,16 +59,16 @@ function ChatroomSearch({ handleChatroomMembership }) {
     <div className='chatroom-search'>
       <div className='chatroom-container'>
         <div className="chatroom-top">
-          <ChatroomSearchBar search={search} handleSearch={handleSearch} searchBy={searchBy} handleSearchBy={handleSearchBy} />
+          <SearchGrid search={search} handleSearch={handleSearch} searchBy={searchBy} handleSearchBy={handleSearchBy} />
           <button className='search-submit-button' onClick={handleChatroomJoin}>Join Channel</button>
         </div>
 
-        <ChatroomSearchList>
+        <SearchGrid>
           {
             chatroomSearchResults().map(chatroom => <ChatroomSearchListItem key={chatroom.id} chatroom={chatroom} selectedChatroom={selectedChatroom} handleSelectedChatroom={handleSelectedChatroom} />)
           }
-        </ChatroomSearchList>
-        <div className='chatroom-search-error'>
+        </SearchGrid>
+        <div className='search-error'>
           {
             errors.map(error => <p key={error}>{error}</p>)
           }
