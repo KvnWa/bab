@@ -16,7 +16,7 @@ Chatroom.create ([
   },
   {
     name: 'Sports',
-    image_url: 'https://cdn-icons.flaticon.com/png/128/2681/premium/2681996.png?token=exp=1650396977~hmac=28a6f0180062abcd32dd1dd8e29ccfd0',
+    image_url: 'https://cdn-icons.flaticon.com/png/128/5564/premium/5564944.png?token=exp=1650552040~hmac=dc83c8e5abfed3bdf96cfa12c70bff22',
     bio: 'All About Sports'
   },
   {

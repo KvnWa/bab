@@ -5,11 +5,11 @@ export const profileImages = [
   },
   {
     name: 'Happy Hank',
-    image_url: 'https://cdn-icons.flaticon.com/png/128/1211/premium/1211015.png?token=exp=1650397170~hmac=41b31b2aca66d14c9a7b524da07708c4'
+    image_url: 'https://cdn-icons.flaticon.com/png/128/805/premium/805370.png?token=exp=1650552357~hmac=dd34f5f15e6364aca72b8ba6d94b8a8f'
   },
   {
     name: 'Studious Sally',
-    image_url: 'https://cdn-icons.flaticon.com/png/128/706/premium/706830.png?token=exp=1650397170~hmac=b79ad1c7bde732f9c835bd35edc6c8d6'
+    image_url: 'https://cdn-icons.flaticon.com/png/128/2763/premium/2763444.png?token=exp=1650552357~hmac=0c2677d5c3581ec73028a4dc304da9a0'
   },
   {
     name: 'Bold Brittney',
