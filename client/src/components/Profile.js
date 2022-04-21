@@ -43,10 +43,9 @@ function UserProfile({ user, handleUser }) {
 
   return (
     <div className='user-profile'>
-      <h2>Update User Profile</h2>
       <form onSubmit={handleFormSubmit}>
         <div>
-          <label>Change Profile Image:
+          <label style={{color: 'white'}}>Change Profile Image:
             <br />
             <select value={image} onChange={handleImageChange}>
               <option value=''>Default</option>
@@ -62,6 +61,26 @@ function UserProfile({ user, handleUser }) {
         </div>
         <input className='bttn-1' type='submit' value='Save' disabled={user.image_url === image}/>
       </form>
+      <h2 style={{color: 'white'}}>Chat Logs</h2>
+      <div className='membership-logs-container'>
+        {
+          profileInfo.chatlog ? (
+            profileInfo.chatlog.map(({chatroom, messages}) => (
+              <div key={chatroom}>
+                <h3>{chatroom}</h3>
+                <textarea
+                  readOnly
+                  rows='5'
+                  cols='40'
+                  value={
+                    messages.map(({ content, created_at }) => (`Message: ${content}\nSent At: ${created_at}\n`)).join('\n')
+                  }
+                />
+              </div>
+            ))
+          ) : ''
+        }
+      </div>
     </div>
   )
 }
